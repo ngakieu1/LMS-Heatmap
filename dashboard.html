@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='heatmap.css') }}">
+</head>
+<body>
+    <h2>Welcome to the Dashboard {{ user_name }}!</h2>
+    {% if heatmap_url %}
+        <h3>Heatmap for User {{ username }}</h3>
+        <img src="{{ heatmap_url }}" alt="Heatmap for {{ username }}" style="max-width: 600px;">
+    {% else %}
+        <p>No heatmap available.</p>
+    {% endif %}
+    <div class="logout-container">
+        <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+    </div>
+</body>
+</html>

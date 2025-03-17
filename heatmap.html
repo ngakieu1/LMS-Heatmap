@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heatmaps Generated</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='heatmap.css') }}">
+</head>
+<body>
+    <h1>Generated Heatmaps</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <h2>Your Heatmap</h2>
+        <img src="{{ heatmap_url }}" alt="Your Heatmap" style="max-width: 100%; border: 2px solid #333;">
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Go back</a>
+</body>
+</html>
